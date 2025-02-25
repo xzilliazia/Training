@@ -17,9 +17,18 @@ class  Player{
         double attackPw = this.weapon.attackPw;
         System.out.println(this.name + " attacking " + opponent.name + " With Power "+ attackPw);
         opponent.defence(attackPw);
+        
     }
     void defence (double attackPw){
-        System.out.println(this.name + " Gots damage "+ attackPw);
+        //take damage if attack > defence. damage = attack - defence.
+        double damage; 
+        if (this.armor.defence < attackPw){
+            damage = attackPw - this.armor.defence;
+        } else {
+            damage = 0;
+        }
+        this.health -= damage;
+        System.out.println(this.name + " Gets damage "+ damage);
     }
     void equipWeapon(Weapon weapon){
         this.weapon = weapon;
@@ -87,8 +96,14 @@ public class latihan1 {
         player2.dislpay();
 
         System.out.println("\nPERTEMPURAN");
+        System.out.println("\t\tPertempuran 1");
         player1.attacking(player2);
-        
+        player1.dislpay();
+        player2.dislpay();
+        System.out.println("\t\tPertempuran 2");
+        player2.attacking(player1);
+        player1.dislpay();
+        player2.dislpay();
 
 
     }
