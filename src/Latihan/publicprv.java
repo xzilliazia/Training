@@ -8,6 +8,7 @@ class Buku {
         this.judul = judul;
         this.penulis = penulis;
     }
+    //display
     void display() {
         System.out.println("\nJudul Buku\t: "+ this.judul);
         System.out.println("Penulis Buku\t: "+ this.penulis);
