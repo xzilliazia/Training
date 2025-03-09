@@ -1,12 +1,12 @@
 package Latihan;
 
-class Playerr{
+class Playerrr{
     String name; //default, dia bisa dibaca dan tulis
     public int exp; // Public, bisa baca tulis.
     private int health; //hanya kan bisa dibaca,tulis didalam class saja.
     
     //construktor
-    Playerr (String name, int exp, int health){
+    Playerrr (String name, int exp, int health){
         this.name = name;
         this.exp = exp;
         this.health = health;
@@ -34,7 +34,7 @@ class Playerr{
 public class pbcprv {
     public static void main(String[] args) {
 
-        Playerr player1 = new Playerr("Satu", 0, 100);
+        Playerrr player1 = new Playerrr("Satu", 0, 100);
 
             //default
             System.out.println(player1.name);//membaca
@@ -64,6 +64,7 @@ public class pbcprv {
 
         //private tidak bisa diakses
         // player1.tambahExp();
+        //tee
 
         }
 }
