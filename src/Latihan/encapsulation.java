@@ -52,7 +52,6 @@ public class encapsulation {
         //read only (we use gatter)
         int angka = object.getIntPrivate();
         System.out.println("getter: "+ angka);
-        
         //write only (we use setter)
          object.setDbPrivate(0.01);
          object.display();
@@ -62,6 +61,7 @@ public class encapsulation {
         System.out.println(object2.getJari());
         object2.setJari(10);
         System.out.println(object2.getJari());
+
 
     }
 }
