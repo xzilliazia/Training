@@ -64,7 +64,7 @@ public class pbcprv {
 
         //private tidak bisa diakses
         // player1.tambahExp();
-        //tee
+        //test
 
         }
 }
