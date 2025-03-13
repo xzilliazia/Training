@@ -3,12 +3,12 @@ package Latihan;
 class Playerr{
     private String name;
     private int baseHealth;
-    private Armorr armor;
     private int level;
-    private Weapoon weapon;
     private int baseAttack;
     private int increaseAttack;
     private int increaseHealth;
+    private Armorr armor;
+    private Weapoon weapon;
     
     public Playerr(String name){
         this.name = name;
@@ -27,29 +27,29 @@ public void display(){
     this.armor.dislpay();
     System.out.println("Health\t\t: " + this.maxhealth());
     System.out.println("Attack\t\t: " + this.getattackPower());
-}
-void equipArmorr(Armorr armor){
-    this.armor = armor;
-}
-void equipWeapoon(Weapoon weapon){
-    this.weapon = weapon;
-}
+    }
+    void equipArmorr(Armorr armor){
+        this.armor = armor;
+    }
+    void equipWeapoon(Weapoon weapon){
+        this.weapon = weapon;
+    }
 
-public void setArmor(Armorr armor){
-    this.armor = armor;
-}
-public void setWeapon(Weapoon weapon){
-    this.weapon = weapon;
-}
-public int maxhealth (){
-    return this.baseHealth + this.level*this.increaseHealth + this.armor.getAddArmor();
-}
-private void levelUp(){
-    this.level++;
-}
-public int getattackPower(){
-    return this.baseAttack + this.level*this.increaseAttack + this.weapon.getAttack();
-}
+    public void setArmor(Armorr armor){
+        this.armor = armor;
+    }
+    public void setWeapon(Weapoon weapon){
+        this.weapon = weapon;
+    }
+    public int maxhealth (){
+        return this.baseHealth + this.level*this.increaseHealth + this.armor.getAddArmor();
+    }
+    private void levelUp(){
+        this.level++;
+    }
+    public int getattackPower(){
+        return this.baseAttack + this.level*this.increaseAttack + this.weapon.getAttack();
+    }
 }
 class Weapoon{
     private String name;
@@ -101,7 +101,5 @@ public class latihan2 {
 
         player1.display();
         player2.display();
-
-
     }
 }
