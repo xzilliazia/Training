@@ -27,30 +27,41 @@ class Playerr{
         System.out.println("Level\t\t: " + this.level);
         this.weapon.dislpay();
         this.armor.dislpay();
-        System.out.println("Health\t\t: " + this.maxhealth());
+        System.out.println("Health\t\t: " + this.getHealth() + "/"+ this.maxhealth());
         System.out.println("Attack\t\t: " + this.getattackPower());
     }
     public String GetName(){
         return this.name;
     }
     
+    public int getHealth(){
+        return this.maxhealth() - this.TotalDamage;
+    }
+
     public void attack(Playerr opponent){
         int damage = this.getattackPower();
-        System.out.println("Attack\t\t: " + this.getattackPower());
-        System.out.println("Player "+ this.name + "Attack\t "+ opponent.GetName() + "With" + damage + "\n");
-        
+       
+        System.out.println("\nPlayer "+ this.name + " Attack "+ opponent.GetName() + " With " + damage + "\n");
+        opponent.defence(damage);
     }
     
     public void defence(int damage){
-        int defencePower = this.getattackPower();
 
+        int defencePower = damage - this.armor.getDefencePower();
+        int deltaDamage;
 
+        if (damage > defencePower){
+            deltaDamage = damage - defencePower;
+        } else {
+            deltaDamage = 0;
+        }
+        
+        this.TotalDamage += deltaDamage;
     }
 
     private int getattackPower(){
         return this.baseAttack + this.level*this.increaseAttack + this.weapon.getAttack();
     }
-
 
     void equipArmorr(Armorr armor){
         this.armor = armor;
@@ -109,6 +120,9 @@ class Armorr{
     void dislpay(){
         System.out.println("Armor\t\t: "+ this.name);
     }
+    public int getDefencePower(){
+        return this.Str*2;
+    }
 }
 
 public class latihan2 {
@@ -125,6 +139,10 @@ public class latihan2 {
         player2.setArmor(armor2);
         player2.setWeapon(weapon2);
 
+        player1.display();
+        player2.display();
+
+        player1.attack(player2);
         player1.display();
         player2.display();
     }
