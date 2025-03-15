@@ -7,6 +7,7 @@ class Playerr{
     private int baseAttack;
     private int increaseAttack;
     private int increaseHealth;
+    private int TotalDamage;
     private Armorr armor;
     private Weapoon weapon;
     
@@ -19,18 +20,42 @@ class Playerr{
         this.increaseAttack = 20;
 
     }
-public void display(){
-    System.out.println("");
-    System.out.println("Name\t\t: " + this.name);
-    System.out.println("Level\t\t: " + this.level);
-    this.weapon.dislpay();
-    this.armor.dislpay();
-    System.out.println("Health\t\t: " + this.maxhealth());
-    System.out.println("Attack\t\t: " + this.getattackPower());
+
+    public void display(){
+        System.out.println("");
+        System.out.println("Name\t\t: " + this.name);
+        System.out.println("Level\t\t: " + this.level);
+        this.weapon.dislpay();
+        this.armor.dislpay();
+        System.out.println("Health\t\t: " + this.maxhealth());
+        System.out.println("Attack\t\t: " + this.getattackPower());
     }
+    public String GetName(){
+        return this.name;
+    }
+    
+    public void attack(Playerr opponent){
+        int damage = this.getattackPower();
+        System.out.println("Attack\t\t: " + this.getattackPower());
+        System.out.println("Player "+ this.name + "Attack\t "+ opponent.GetName() + "With" + damage + "\n");
+        
+    }
+    
+    public void defence(int damage){
+        int defencePower = this.getattackPower();
+
+
+    }
+
+    private int getattackPower(){
+        return this.baseAttack + this.level*this.increaseAttack + this.weapon.getAttack();
+    }
+
+
     void equipArmorr(Armorr armor){
         this.armor = armor;
     }
+
     void equipWeapoon(Weapoon weapon){
         this.weapon = weapon;
     }
@@ -38,19 +63,20 @@ public void display(){
     public void setArmor(Armorr armor){
         this.armor = armor;
     }
+
     public void setWeapon(Weapoon weapon){
         this.weapon = weapon;
     }
+
     public int maxhealth (){
         return this.baseHealth + this.level*this.increaseHealth + this.armor.getAddArmor();
     }
+
     private void levelUp(){
         this.level++;
     }
-    public int getattackPower(){
-        return this.baseAttack + this.level*this.increaseAttack + this.weapon.getAttack();
-    }
 }
+
 class Weapoon{
     private String name;
     private int attackPower;
