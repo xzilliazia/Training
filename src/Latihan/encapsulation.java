@@ -9,7 +9,6 @@ class Data {
         this.intPublic = 0; 
         this.intPrivate = 0; 
     }
-
     void display(){
         System.out.println(this.intPublic);
         System.out.println(this.intPrivate);
@@ -25,7 +24,6 @@ class Data {
     }
 
 }
-
 class Lingkaran{
     private double diameter;
 
@@ -41,7 +39,6 @@ class Lingkaran{
         this.diameter = jari*2;
     }   
 }
-
 public class encapsulation {
     public static void main(String[] args) {
         Data object = new Data();
@@ -61,7 +58,5 @@ public class encapsulation {
         System.out.println(object2.getJari());
         object2.setJari(10);
         System.out.println(object2.getJari());
-
-
     }
 }

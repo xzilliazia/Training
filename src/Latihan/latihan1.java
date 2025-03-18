@@ -15,7 +15,7 @@ class  Player{
     }
     void attacking (Player opponent){
         double attackPw = this.weapon.attackPw;
-        System.out.println(this.name + " attacking " + opponent.name + " With Power "+ attackPw);
+        System.out.println("\n" + this.name + " attacking " + opponent.name + " With Power "+ attackPw);
         opponent.defence(attackPw);
         
     }
